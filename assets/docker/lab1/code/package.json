@@ -1,0 +1,13 @@
+{
+  "name": "docker-lab1",
+  "version": "1.0.0",
+  "description": "Lab1 -  dojo docker",
+  "author": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1"
+  }
+}

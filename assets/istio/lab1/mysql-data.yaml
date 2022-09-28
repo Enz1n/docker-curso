@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: setup
+spec:
+  restartPolicy: Never
+  containers:
+  - name: setup
+    image: anthonyamanse/mysql-bookinfo
+    imagePullPolicy: Always
+    env:
+      - name: MYSQL_DB_USER
+        valueFrom:
+          secretKeyRef:
+            name: demo-credentials
+            key: username
+      - name: MYSQL_DB_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: demo-credentials
+            key: password
+      - name: MYSQL_DB_HOST
+        valueFrom:
+          secretKeyRef:
+            name: demo-credentials
+            key: host
+      - name: MYSQL_DB_PORT
+        valueFrom:
+          secretKeyRef:
+            name: demo-credentials
+            key: port
